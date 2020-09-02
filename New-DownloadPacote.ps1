@@ -9,10 +9,10 @@ function New-DownloadPacote {
     $Pasta = $Pacote.Substring(0,$Count)
 
     $url = "$recursos/SISTEMAS ELEITORAIS/$Eleicao/$Ambiente/$Pasta/$Pacote"
-    $destino = "D:\COMUM\InstSeg\SISTEMAS ELEITORAIS\$Eleicao\$Ambiente\$Pasta"
+    $destino = "C:\COMUM\InstSeg\SISTEMAS ELEITORAIS\$Eleicao\$Ambiente\$Pasta"
     
     if ( -Not(Test-Path("$destino\$Pacote"))) {
-        $download = Start-BitsTransfer -Source $url -Destination $destino -Asynchronous
+        $download = Start-BitsTransfer -Source $url -Destination $destino -DisplayName 'pacote' -Asynchronous
     }
         
 }
